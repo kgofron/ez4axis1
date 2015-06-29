@@ -1,0 +1,5 @@
+NAME=ez4axis
+USER=softioc
+PORT=4031
+HOST=xf03idc-ioc1
+CHDIR="$CHDIR/iocBoot/iocez4axis"
