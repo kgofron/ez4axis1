@@ -1,10 +1,10 @@
 #!../../bin/linux-x86_64/ez4axis
 
-epicsEnvSet("ENGINEER",  "klauer")
-epicsEnvSet("LOCATION",  "740 3IDC RG-C?")
+epicsEnvSet("ENGINEER",  "kgofron")
+epicsEnvSet("LOCATION",  "740 10IDD RG-S")
 
 epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "NO")
-epicsEnvSet("EPICS_CA_ADDR_LIST", "10.3.0.255")
+epicsEnvSet("EPICS_CA_ADDR_LIST", "10.10.0.255")
 
 < envPaths
 
@@ -12,22 +12,36 @@ epicsEnvSet("EPICS_CA_ADDR_LIST", "10.3.0.255")
 dbLoadDatabase("../../dbd/ez4axis.dbd",0,0)
 ez4axis_registerRecordDeviceDriver(pdbbase) 
 
-epicsEnvSet(EZ_IP   , "10.3.2.61")
+epicsEnvSet(EZ_IP   , "10.10.2.62")
 epicsEnvSet(EZ_PORT , 4001)
 
-epicsEnvSet(CtlSys  , "XF:03IDC-CT")
-epicsEnvSet(Sys     , "XF:03IDC-ES")
+epicsEnvSet(CtlSys  , "XF:10IDD-CT")
+epicsEnvSet(Sys     , "XF:10IDD-ES")
 epicsEnvSet(CntlDev , "Ez4:1")
+epicsEnvSet(CntlDev2 , "Ez4:2")
+epicsEnvSet(CntlDev3 , "Ez4:3")
+epicsEnvSet(CntlDev4 , "Ez4:4")
+epicsEnvSet(CntlDev5 , "Ez4:5")
 
-# epicsEnvSet("IOCNAME", "ez4axis-1") # set by softioc init.d script
+epicsEnvSet("IOCNAME", "ez4axis-1") # set by softioc init.d script
 epicsEnvSet("IOC_P", "$(CtlSys){IOC:$(IOCNAME)}")
 
 ## NOTE: RS485 address must match up with the address selected on the device with its address switch:
 epicsEnvSet(ALM_ADDR, 1)
+epicsEnvSet(ALM_ADDR2, 2)
+epicsEnvSet(ALM_ADDR3, 3)
+epicsEnvSet(ALM_ADDR4, 4)
+epicsEnvSet(ALM_ADDR5, 5)
 
 ## Load record instances
 dbLoadRecords("$(ALLMOTION)/db/ez4axis.db","Sys=$(Sys),Dev={$(CntlDev)},PORT=ALM1,ADDR=0")
-dbLoadTemplate("motors.sub")
+dbLoadRecords("$(ALLMOTION)/db/ez4axis.db","Sys=$(Sys),Dev={$(CntlDev2)},PORT=ALM2,ADDR=0")
+dbLoadRecords("$(ALLMOTION)/db/ez4axis.db","Sys=$(Sys),Dev={$(CntlDev3)},PORT=ALM3,ADDR=0")
+dbLoadRecords("$(ALLMOTION)/db/ez4axis.db","Sys=$(Sys),Dev={$(CntlDev4)},PORT=ALM4,ADDR=0")
+dbLoadRecords("$(ALLMOTION)/db/ez4axis.db","Sys=$(Sys),Dev={$(CntlDev5)},PORT=ALM5,ADDR=0")
+#dbLoadTemplate("motors.sub")
+#dbLoadTemplate("motors2.sub")
+dbLoadTemplate("motors.substitution")
 
 # drvAsynIPPortConfigure 'port name' 'host:port [protocol]' priority 'disable auto-connect' noProcessEos
 drvAsynIPPortConfigure("IP1", "$(EZ_IP):$(EZ_PORT)", 0, 0, 0)
@@ -35,8 +49,16 @@ drvAsynIPPortConfigure("IP1", "$(EZ_IP):$(EZ_PORT)", 0, 0, 0)
 # almCreateController(AllMotion port name, asyn port name, RS485 address,
 #                     Number of axes, Moving poll period (ms), Idle poll period (ms))
 almCreateEZ4Controller("ALM1", "IP1", "$(ALM_ADDR)", 4, 100, 250)
+almCreateEZ4Controller("ALM2", "IP1", "$(ALM_ADDR2)", 4, 100, 250)
+almCreateEZ4Controller("ALM3", "IP1", "$(ALM_ADDR3)", 4, 100, 250)
+almCreateEZ4Controller("ALM4", "IP1", "$(ALM_ADDR4)", 4, 100, 250)
+almCreateEZ4Controller("ALM5", "IP1", "$(ALM_ADDR5)", 4, 100, 250)
 
 asynSetTraceMask("ALM1", -1, 0x01)
+asynSetTraceMask("ALM2", -1, 0x01)
+asynSetTraceMask("ALM3", -1, 0x01)
+asynSetTraceMask("ALM4", -1, 0x01)
+asynSetTraceMask("ALM5", -1, 0x01)
 asynSetTraceMask("IP1", -1, 0x01)
 # asynSetTraceMask("ALM1", -1, 0x0)
 # asynSetTraceMask("IP1", -1, 0x0)

@@ -25,7 +25,7 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 #SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
 
 SUPPORT=/epics/support
-ASYN=$(SUPPORT)/asyn/4-26/
+ASYN=$(SUPPORT)/asyn_dir/4-26/
 # ALLMOTION=$(SUPPORT)/allmotion/1-0/
 ALLMOTION=$(SUPPORT)/ez4axis.git/
 MOTOR=$(SUPPORT)/motor/6-9
