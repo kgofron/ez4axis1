@@ -13,6 +13,8 @@ O.Common/
 envPaths
 bin/
 as/save
+as/req
+records.dbl
 
 syntax: regexp
 ^pmc/
