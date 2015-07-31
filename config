@@ -1,4 +1,4 @@
-NAME=ez4axis
+NAME=ez4axis1
 USER=softioc
 PORT=4031
 HOST=xf10idd-ioc1
