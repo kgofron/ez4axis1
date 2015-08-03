@@ -23,7 +23,7 @@ epicsEnvSet(CntlDev , "Ez4:1")
 #epicsEnvSet(CntlDev4 , "Ez4:4")
 #epicsEnvSet(CntlDev5 , "Ez4:5")
 
-epicsEnvSet("IOCNAME", "ez4axis1") # set by softioc init.d script
+#epicsEnvSet("IOCNAME", "ez4axis1") # set by softioc init.d script
 epicsEnvSet("IOC_P", "$(CtlSys){IOC-$(IOCNAME)}")
 
 ## NOTE: RS485 address must match up with the address selected on the device with its address switch:
