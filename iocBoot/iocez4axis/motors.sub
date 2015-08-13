@@ -1,8 +1,8 @@
 file "$(ALLMOTION)/db/allmotion_motor.db" {
 pattern
  {   Sys,        Dev, Ax,      DESC, DTYP,      DIR, VELO, VBAS, ACCL, BDST, BVEL, BACC, PORT, ADDR, MRES,  PREC, EGU, DHLM,  DLLM,   INIT,  ALIAS }
- {XF:10IDD-ES, Ez4:1,  1, "an2cth",  asynMotor, 0,     5,     5,    1,    0,    0,    0,    ALM1, 0,    0.001, 3,    um,  10000, -10000, 0,  "an2cth" }
- {XF:10IDD-ES, Ez4:1,  2, "an2cchi", asynMotor, 0,     5,     5,    1,    0,    0,    0,    ALM1, 1,    0.001, 3,    um,  10000, -10000, 0,  "an2cchi" }
- {XF:10IDD-ES, Ez4:1,  3, "an2wth",  asynMotor, 0,     5,     5,    1,    0,    0,    0,    ALM1, 2,    0.001, 3,    um,  10000, -10000, 0,  "an2wth" }
- {XF:10IDD-ES, Ez4:1,  4, "an2wchi", asynMotor, 0,     5,     5,    1,    0,    0,    0,    ALM1, 3,    0.001, 3,    um,  10000, -10000, 0,  "an2wchi" }
+ {XF:10IDD-ES, Ez4:1,  1, "an2cth",  asynMotor, 0,     5,     5,    1,    0,    0,    0,    ALM1, 0,    1.300e-3,   3,    urad,  10000, -10000, 0,  "an2cth" }
+ {XF:10IDD-ES, Ez4:1,  2, "an2cchi", asynMotor, 0,     5,     5,    1,    0,    0,    0,    ALM1, 1,    2.09375e-4, 3,    deg,   10000, -10000, 0,  "an2cchi" }
+ {XF:10IDD-ES, Ez4:1,  3, "an2wth",  asynMotor, 0,     5,     5,    1,    0,    0,    0,    ALM1, 2,    1.291e-3,   3,    urad,  10000, -10000, 0,  "an2wth" }
+ {XF:10IDD-ES, Ez4:1,  4, "an2wchi", asynMotor, 0,     5,     5,    1,    0,    0,    0,    ALM1, 3,    2.09375e-4, 3,    deg,   10000, -10000, 0,  "an2wchi" }
 }
