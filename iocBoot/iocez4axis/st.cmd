@@ -96,10 +96,10 @@ create_monitor_set("allmotion_pass1.req", 10, "")
 #dbpf("XF:10IDD-ES{Ez4:1-Ax:3}LimitPolarity","1")
 #dbpf("XF:10IDD-ES{Ez4:1-Ax:4}LimitPolarity","1")
 
-dbpf("$(Sys){$(CntlDev)-Ax:1}LimitPolarity","1")
-dbpf("$(Sys){$(CntlDev)-Ax:2}LimitPolarity","1")
-dbpf("$(Sys){$(CntlDev)-Ax:3}LimitPolarity","1")
-dbpf("$(Sys){$(CntlDev)-Ax:4}LimitPolarity","1")
+#dbpf("$(Sys){$(CntlDev)-Ax:1}LimitPolarity","1")
+#dbpf("$(Sys){$(CntlDev)-Ax:2}LimitPolarity","1")
+#dbpf("$(Sys){$(CntlDev)-Ax:3}LimitPolarity","1")
+#dbpf("$(Sys){$(CntlDev)-Ax:4}LimitPolarity","1")
 
 cd ${TOP}
 dbl > ./records.dbl
