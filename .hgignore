@@ -13,6 +13,8 @@ O.Common/
 envPaths
 bin/
 records.dbl
+as/
+TMP/
 
 syntax: regexp
 ^pmc/

@@ -90,6 +90,9 @@ create_monitor_set("allmotion_pass1.req", 10, "")
 
 # caPutLogInit("ioclog.cs.nsls2.local:7004", 1)
 
+# Enable limits
+dbpf("$(Sys){$(CntlDev)}ModEnLimits","1")
+
 # Adjust (reverse) limit polarity
 #dbpf("XF:10IDD-ES{Ez4:1-Ax:1}LimitPolarity","1")
 #dbpf("XF:10IDD-ES{Ez4:1-Ax:2}LimitPolarity","1")
