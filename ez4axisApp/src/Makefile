@@ -20,9 +20,15 @@ ez4axis_DBD += allmotion.dbd motorSupport.dbd asyn.dbd drvAsynIPPort.dbd
 ez4axis_DBD += stringinRecord.dbd stringoutRecord.dbd
 ez4axis_DBD += asSupport.dbd calcSupport.dbd system.dbd
 
+ez4axis_DBD += devIocStats.dbd 
+#ez4axis_DBD += caPutLog.dbd
+
 # Add all the support libraries needed by this IOC
 ez4axis_LIBS += allmotion motor asyn
 ez4axis_LIBS += autosave calc
+
+ez4axis_LIBS += devIocStats
+#ez4axis_LIBS += caPutLog
 
 # ez4axis_registerRecordDeviceDriver.cpp derives from ez4axis.dbd
 ez4axis_SRCS += ez4axis_registerRecordDeviceDriver.cpp

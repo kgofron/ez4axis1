@@ -65,7 +65,7 @@ cd ${TOP}/
 
 dbLoadRecords("$(EPICS_BASE)/db/save_restoreStatus.db", "P=$(IOC_P)")
 dbLoadRecords("$(EPICS_BASE)/db/iocAdminSoft.db","IOC=$(IOC_P)")
-ssave_restoreSet_status_prefix("$(IOC_P)")
+save_restoreSet_status_prefix("$(IOC_P)")
 
 set_savefile_path("${TOP}/as/save","")
 set_requestfile_path("$(EPICS_BASE)/as/req")
