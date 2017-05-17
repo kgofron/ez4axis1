@@ -93,6 +93,10 @@ create_monitor_set("allmotion_pass1.req", 10, "")
 # Enable limits
 dbpf("$(Sys){$(CntlDev)}ModEnLimits","1")
 
+# Move current value
+dbpf("$(Sys){$(CntlDev)-Ax:2}MoveCur-SP","0.8")
+dbpf("$(Sys){$(CntlDev)-Ax:4}MoveCur-SP","0.8")
+
 # Adjust (reverse) limit polarity
 #dbpf("XF:10IDD-ES{Ez4:1-Ax:1}LimitPolarity","1")
 #dbpf("XF:10IDD-ES{Ez4:1-Ax:2}LimitPolarity","1")
