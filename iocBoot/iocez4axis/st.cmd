@@ -58,8 +58,10 @@ asynSetTraceMask("ALM1", -1, 0x01)
 #asynSetTraceMask("ALM4", -1, 0x01)
 #asynSetTraceMask("ALM5", -1, 0x01)
 asynSetTraceMask("IP1", -1, 0x01)
-# asynSetTraceMask("ALM1", -1, 0x0)
+asynSetTraceMask("ALM1", -1, 0x1)
 # asynSetTraceMask("IP1", -1, 0x0)
+#asynSetTraceIOMask("ALM1", -1, 0x2)
+#asynSetTraceIOMask("IP1", -1, 0x2)
 
 cd ${TOP}/
 
